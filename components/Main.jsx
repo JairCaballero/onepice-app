@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { fetchData } from "../lib/api"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { AnimatedCard } from "./GameCard"
+import { Link } from "expo-router"
 
 function Main() {
   const [data, setData] = useState([])
@@ -20,6 +21,9 @@ function Main() {
       <View>
         <Text style={{ color: 'white', marginBottom: 10, padding: 5, fontSize: 24, fontWeight: 'bold' }}>Akuma No Mi - One Piece</Text>
       </View>
+      <Link href="/about" style={{color: 'white'}}>
+        Ir a Abaout
+      </Link>
       {data.length  === 0 ? (
         <ActivityIndicator size={'large'} />
       ) : (

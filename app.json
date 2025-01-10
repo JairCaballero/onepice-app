@@ -1,12 +1,13 @@
 {
   "expo": {
-    "name": "metacritic-app",
-    "slug": "metacritic-app",
+    "name": "onepiece-app",
+    "slug": "onepiece-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+     "scheme": "onepiece",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
@@ -22,7 +23,11 @@
       }
     },
     "web": {
+      "bundler": "metro",
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
