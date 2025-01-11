@@ -1,16 +1,22 @@
 /* eslint-disable prettier/prettier */
+import { Link } from "expo-router"
 import { useEffect, useRef } from "react"
 import { StyleSheet, View, Text, Image, Animated } from "react-native"
 
 export const Card = ({item}) => {
   return (
-    <View style={styles.card}>
-      <Image source={{ uri: item.filename }} style={styles.image} />
-      <Text style={styles.name}>{item.roman_name}</Text>
-      <Text style={styles.description}>{item.description}
-      </Text>
-      <Text style={styles.type}>Tipo: {item.type || "No Registrado"}</Text>
-    </View>
+    <Link asChild href={{
+      pathname: '/[id]',
+      params: { id: item.id }
+    }}>
+      <View style={styles.card}>
+        <Image source={{ uri: item.filename }} style={styles.image} />
+        <Text style={styles.name}>{item.roman_name}</Text>
+        <Text style={styles.description}>{item.description}
+        </Text>
+        <Text style={styles.type}>Tipo: {item.type || "No Registrado"}</Text>
+      </View>
+    </Link>
   )
 }
 
