@@ -1,13 +1,17 @@
 import { Link } from "expo-router"
-import { Text, View } from "react-native"
+import { Pressable, Text, View } from "react-native"
+import { HomeIcon } from "../components/Icons"
 
 export default function About () {
   return (
     <View>
-      <Link href='/about' style={{color: 'white'}}>
-        Ir a Abaout
+      <Link asChild href='/' style={{color: 'white'}}>
+        <Pressable style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 4, marginBottom: 10 }}>
+          <HomeIcon />
+          <Text style={{ color: 'white' }}>Ir al inicio</Text>
+        </Pressable>
       </Link>
-      <Text>Esta es la pagina abaout</Text>
+      <Text style={{ color: 'white' }}>Esta es la pagina abaout</Text>
     </View>
   )
 }
